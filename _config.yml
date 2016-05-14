@@ -1,0 +1,17 @@
+# Setup
+title:        Zhanpeng's Blog
+tagline:      A repository for me to record reading notes and exercises
+baseurl:      ""
+paginate:     100
+
+# About/contact
+author:
+  name:       Zhanpeng Wu
+  url:        http://wuzhanpeng.github.io
+
+# Gems
+gems:
+  - jekyll-paginate
+
+#Others
+markdown: kramdown
