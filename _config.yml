@@ -2,7 +2,7 @@
 title:        Zhanpeng's Blog
 tagline:      A repository for me to record reading notes and exercises
 baseurl:      ""
-paginate:     100
+paginate:     10
 
 # About/contact
 author:
