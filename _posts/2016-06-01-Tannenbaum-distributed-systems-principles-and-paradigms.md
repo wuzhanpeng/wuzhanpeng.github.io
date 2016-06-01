@@ -1,31 +1,34 @@
 ---
 layout: default
 title:  "[DISTRIBUTED SYSTEMS - Principles and Paradigms] Chapter 1"
-date:   2016-05-14 11:00:00
+date:   2016-06-01 01:00:00
 categories: blog
 tags: 
   - Distributed Systems
   - Reading Notes
 ---
 
+## [DISTRIBUTED SYSTEMS - Principles and Paradigms] Chapter 1
+------
+
 # Introduction
 
-## Goals
+## 1. Goals
 
-### Accessible
+### 1.1 Accessible
 
-### Transparency
+### 1.2 Transparency
 
-### Openness
+### 1.3 Openness
 
-### Scalability
+### 1.4 Scalability
 
-### Pitfalls
+### 1.5 Pitfalls
 
-## Types of distributed systems
+## 2. Types of distributed systems
 
-### Distributed Computing Systems
+### 2.1 Distributed Computing Systems
 
-### Distributed Information Systems
+### 2.2 Distributed Information Systems
 
-### Distributed Pervasive Systems
+### 2.3 Distributed Pervasive Systems
