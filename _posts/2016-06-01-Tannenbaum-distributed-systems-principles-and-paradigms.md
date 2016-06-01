@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "[DISTRIBUTED SYSTEMS - Principles and Paradigms] Chapter 1"
-date:   2016-06-01 01:00:00
+date:   2016-06-01 02:00:00
 categories: blog
 tags: 
   - Distributed Systems
