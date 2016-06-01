@@ -1,5 +1,4 @@
 #!/bin/bash
-[ x$1 != x ] || { echo "[ERROR] Commit message is required"; exit; }
 git add --all
-git commit -m "$1"
+git commit -m "`TZ=GST-7GDT date '+%Y/%m/%d %H:%M:%S'`"" $1"
 git push -u origin master
