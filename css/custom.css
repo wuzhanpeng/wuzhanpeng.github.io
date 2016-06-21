@@ -1,0 +1,9 @@
+.elevator-button {
+	display:none;
+	width:55px;
+	height:55px;
+	position:fixed;
+	right:50px;
+	bottom:50px;
+	background:url(/images/backtop.png) no-repeat -70px 0px;
+}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "Simple test on Markdown syntax"
+title:  "Simple syntax test on Markdown"
 date:   2016-05-13 22:37:00
 categories: blog
 tags: 
@@ -9,7 +9,7 @@ tags:
   - Functional test
 ---
 
-# Simple test on Markdown syntax
+# Simple syntax test on Markdown
 
 This is the main text.
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "使用GitHub Pages建个人博客"
+title:  "GitHub Pages"
 date:   2016-05-14 11:00:00
 categories: blog
 tags: 
