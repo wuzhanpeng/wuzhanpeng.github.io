@@ -38,7 +38,7 @@ window.onscroll = function() {
 
 - <a href="#ksum">K-Sum Problem</a>
 - <a href="#construct_binary_tree_from_traversal">Construct Binary Tree from Traversal</a>
-- <a href="#combination">Combination Problem</a>
+- <a href="#permutation_or_combination">Permutation or Combination Problem</a>
 - <a href="#path_sum">Path Sum Problem</a>
 
 ------
@@ -86,7 +86,8 @@ for (int i = 0; i < nums.length; ++ i) {
 
 > Problems: [(M) 3Sum](https://leetcode.com/problems/3sum/) \| [(M) 3Sum Closest](https://leetcode.com/problems/3sum-closest/)
 
-思路：3Sum的解题思路是建立在2Sum上的。在输入数组`nums`已排序的基础上，选定一个数`nums[k]`，然后对余下的`nums[k+1 .. n]`执行2Sum的过程。这个思路可以推广到K-Sum问题，而且归根到底还是2Sum问题。<u>复杂度为O(N^2)</u>  
+思路：3Sum的解题思路是建立在2Sum上的。在输入数组`nums`已排序的基础上，选定一个数`nums[k]`，然后对余下的`nums[k+1 .. n]`执行2Sum的过程。这个思路可以推广到K-Sum问题，而且归根到底还是2Sum问题。<u>复杂度为O(N^2)</u>
+
 ***`Note:`*** 因为题目要求不能有重复的triplet，在不使用Set的情况下，我们可以利用排序后的特性，遇到连续的重复的数字只需要计算、判断一次，余下的可以直接略过。举个例子，输入数组为`[1, 1, 2, -3]`，如果不忽略第二个`1`，则答案中会有两组`[1, 2, -3]`。
 
 ### 4Sum  
@@ -137,11 +138,11 @@ for (int i = 0; i < nums.length; ++ i) {
 
 ------
 
-<a name="combination"></a>
+<a name="permutation_or_combination"></a>
 
-## Combination Problem
+## Permutation or Combination Problem
 
-组合问题一个常规的解法是使用回溯。来自[Wikipedia的伪代码](https://en.wikipedia.org/wiki/Backtracking)：
+排列/组合问题一个常规的解法是使用回溯。来自[Wikipedia的伪代码](https://en.wikipedia.org/wiki/Backtracking)：
 
 ```
 procedure bt(c)
@@ -159,11 +160,37 @@ procedure bt(c)
 
 ***`Note:`*** 注意两点，<u>递归的终止条件</u>和<u>循环体内候选解的选择</u>。
 
+### Permutation Problem
+
+> Problems: [(M) Permutations](https://leetcode.com/problems/permutations/) \| [(M) Permutations II](https://leetcode.com/problems/permutations-ii/)
+
+思路：
+
 ### Simple Combination Problem
 
-> Problems: [(M) Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) \| [(M) Combination Sum](https://leetcode.com/problems/combination-sum/) \| [(M) Combinations](https://leetcode.com/problems/combinations/)
+> Problems: [(M) Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) \| [(M) Combination Sum](https://leetcode.com/problems/combination-sum/) \| [(M) Combination Sum II](https://leetcode.com/problems/combination-sum-ii/) \| [(M) Combinations](https://leetcode.com/problems/combinations/)
 
 思路：单纯的组合问题，即求出所有可能的组合。如`(M) Letter Combinations of a Phone Number`即在数字对应字符的情况下，求出数字串对应的所有可能的字符串，数字串长度是确定的（递归的终止条件），而且每个数字对应的字符有限（组合的可能性在循环体现），套用上面给出的伪代码即可写出程序。使用递归的一大好处就是代码的思路很清晰。
+
+另外在此类问题中，常要求结果中不能有重复的答案（*The solution set must not contain duplicate combinations*），这里以[(M) Combination Sum](https://leetcode.com/problems/combination-sum/)和[(M) Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)为例，Ⅰ的输入是一个集合（set，无重复元素），元素可被重复选择；Ⅱ的输入是普通数组（collection，可能有重复元素），元素最多只能被选一次；Ⅰ和Ⅱ均要求结果中不能有重复的答案。首先第一点，在Ⅰ中，（排序后）按照回溯的思路并不会出现重复的答案（集合的性质）；同样的解法放在Ⅱ的条件下就会出现问题，当数组中有重复元素的时候，Ⅱ的结果中就会有重复的答案，如`candidates=[2, 1, 5, 2] target=8`就会得到`[[1,2,5], [1,2,5]]`的答案；更深入的原因是：<u>在答案的相同的位置上，出现了符合题意的重复解</u>
+
+	 / →2→ \
+	1       5
+	 \ →2→ /
+
+因此，我们要保证答案中，相同位置上，相同的数字最多只能出现一次，简单修改伪代码为：
+
+```
+procedure bt(c)
+  if reject(P,c) then return
+  if accept(P,c) then output(P,c)
+  s ← first(P,c)
+  while s ≠ Λ do
+    if contain(Set,c) then continue 	// new added
+    else then Add(Set,c)		// new added
+    bt(s)
+    s ← next(P,s)
+```
 
 ### Hybrid Combination Problem
 
