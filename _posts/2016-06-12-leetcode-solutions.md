@@ -40,6 +40,7 @@ window.onscroll = function() {
 - <a href="#construct_binary_tree_from_traversal">Construct Binary Tree from Traversal</a>
 - <a href="#permutation_or_combination">Permutation or Combination Problem</a>
 - <a href="#path_sum">Path Sum Problem</a>
+- <a href="#topological_sorting">Topological sorting</a>
 
 ------
 
@@ -194,7 +195,7 @@ procedure bt(c)
 
 ### Hybrid Combination Problem
 
-> Problems: [(M) Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
+> Problems: [(M) Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) \| [(M) Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/)
 
 思路：在组合的基础上混入其它问题，或在解题中利用回溯的思想。如`(M) Generate Parentheses`，本身是一个括号的配对问题（即左右括号配对），在左括号还没有达到最大数时（因此左括号数量在这里是递归的终止条件），左括号的右边可以是左括号或者是右括号；另外在回溯/递归的过程结束后，还要进行右括号的填充。
 
@@ -207,5 +208,15 @@ procedure bt(c)
 > Problems: [(E) Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/) \| [(E) Path Sum](https://leetcode.com/problems/path-sum/) \| [(M) Path Sum II](https://leetcode.com/problems/path-sum-ii/)
 
 思路：树的遍历问题，采用深度遍历（Depth-first Search），即可找出所有路径（root-to-leaf paths）。注意两点：1) 叶结点的判定，有一个子结点为null不一定就是叶结点，须两个子结点同时为null才算；2) 递归调用中注意变量的恢复。
+
+------
+
+<a name="topological_sorting"></a>
+
+## Topological sorting
+
+> Problems: [(M) Course Schedule](https://leetcode.com/problems/course-schedule/)
+
+思路：
 
 ------
